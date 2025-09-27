@@ -340,15 +340,15 @@
 #define SIOD_GPIO_NUM 1
 #define SIOC_GPIO_NUM 2
 
-#define Y9_GPIO_NUM 18          //D7 Camera Module Pin
-#define Y8_GPIO_NUM 38          //D6 Camera Module Pin
-#define Y7_GPIO_NUM 8           //D5 Camera Module Pin
-#define Y6_GPIO_NUM 7           //D4 Camera Module Pin
-#define Y5_GPIO_NUM 4           //D3 Camera Module Pin
-#define Y4_GPIO_NUM 43          //D2 Camera Module Pin
-#define Y3_GPIO_NUM 3           //D1 Camera Module Pin
-#define Y2_GPIO_NUM 44          //D0 Camera Module Pin
-#define VSYNC_GPIO_NUM 6       
+#define Y9_GPIO_NUM 18 // D7 Camera Module Pin
+#define Y8_GPIO_NUM 38 // D6 Camera Module Pin
+#define Y7_GPIO_NUM 8  // D5 Camera Module Pin
+#define Y6_GPIO_NUM 7  // D4 Camera Module Pin
+#define Y5_GPIO_NUM 4  // D3 Camera Module Pin
+#define Y4_GPIO_NUM 43 // D2 Camera Module Pin
+#define Y3_GPIO_NUM 3  // D1 Camera Module Pin
+#define Y2_GPIO_NUM 44 // D0 Camera Module Pin
+#define VSYNC_GPIO_NUM 6
 #define HREF_GPIO_NUM 10
 #define PCLK_GPIO_NUM 5
 

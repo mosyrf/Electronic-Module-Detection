@@ -4,7 +4,7 @@
 #include "edge-impulse-sdk/dsp/image/image.hpp"
 
 #include "esp_camera.h"
-#define CAMERA_MODEL_DFRobot_FireBeetle2_ESP32S3_OV2640REDModule
+#include "board_config.h"
 #include "camera_pins.h"
 
 #include "DFRobot_AXP313A.h"
@@ -28,7 +28,7 @@ uint8_t *snapshot_buf; // points to the output of the capture
 static camera_config_t camera_config = {
     .pin_pwdn = PWDN_GPIO_NUM,
     .pin_reset = RESET_GPIO_NUM,
-    .pin_xclk = XCLK_GPIO_NUM, 
+    .pin_xclk = XCLK_GPIO_NUM,
     .pin_sscb_sda = SIOD_GPIO_NUM,
     .pin_sscb_scl = SIOC_GPIO_NUM,
 
@@ -45,7 +45,7 @@ static camera_config_t camera_config = {
     .pin_pclk = PCLK_GPIO_NUM,
 
     // XCLK 20MHz or 10MHz for OV2640 double FPS (Experimental)
-    .xclk_freq_hz = 12000000 ,   // 12MHz for OV2640 Red Module
+    .xclk_freq_hz = 12000000, // 12MHz for OV2640 Red Module
     // .xclk_freq_hz = 20000000, // 20MHz for BuiltinOV2640
     .ledc_timer = LEDC_TIMER_0,
     .ledc_channel = LEDC_CHANNEL_0,
@@ -84,7 +84,7 @@ void setup()
 
     // Inisialisasi TFT
     tft.init();
-    tft.setRotation(2); // 0=PORTRAIT, 1=LANDSCAPE, 2=PORTRAIT_FLIP, 3=LANDSCAPE_FLIP 
+    tft.setRotation(3); // 0=PORTRAIT, 1=LANDSCAPE, 2=PORTRAIT_FLIP, 3=LANDSCAPE_FLIP
     tft.fillScreen(TFT_BLACK);
     tft.setSwapBytes(true);
 
@@ -203,8 +203,8 @@ void display_detection_to_tft(uint8_t *rgb888_buf, uint32_t src_w, uint32_t src_
     if (!rgb888_buf)
         return;
 
-    const uint16_t tft_w = 240;
-    const uint16_t tft_h = 240;
+    const uint16_t tft_w = 480;
+    const uint16_t tft_h = 320;
 
     // Alokasi buffer RGB565 (2 bytes per pixel)
     size_t buf_bytes = tft_w * tft_h * 2;
